@@ -17,17 +17,7 @@ class ViewController: UIViewController {
         
         printContets(contents: contents)
         
-//        let deadlines = makeDeadlines()
-//        print(deadlines)
-//        for d in deadlines {
-//            print(d.rawValue)
-//        }
-//        print(names)
-//        print(makeResetTimes())
-//        let md = makeResetDays()
-//        for day in md {
-//            print(day?.rawValue ?? "nil")
-//        }
+
     }
     
 

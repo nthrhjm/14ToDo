@@ -15,7 +15,7 @@ struct Content {
     let resetTime:String //リセット時刻
     let resetDay:WeekDay? //リセット曜日 列挙型WeekDay
     var isComplete: Bool = false //完了したらtrue
-    var description:String? //補足説明文
+    var description:String? = nil //補足説明文
 }
 
 enum Deadline:String {
@@ -33,16 +33,14 @@ enum WeekDay:String {
     case saturday = "土曜"
 }
 
-let content1 = Content(name: "エキスパートルーレット", deadline: .weekly, resetTime: "0:00", resetDay: nil, description: nil)
-let content2 = Content(name: "お得意様取引", deadline: .weekly, resetTime: "17:00", resetDay: .tuesday, description: nil)
-let contents:[Content] = [content1, content2]
-
+//コンテンツの配列を出力
 func printContets(contents:[Content]) {
     for content in contents {
         print("<\(content.deadline.rawValue)>  \(content.name) リセット時間 \(content.resetDay?.rawValue ?? "") \(content.resetTime)　\(content.isComplete ? "完了": "未完了")\n\(content.description ?? "") ")
     }
 }
 
+//コンテンツの期日の配列を作成
 func makeDeadlines() -> [Deadline] {
     var deadlines = [Deadline]()
     for _ in 0 ..< 19 {
@@ -54,7 +52,7 @@ func makeDeadlines() -> [Deadline] {
     return deadlines
 }
 
-
+//コンテンツ名の配列を作成
 let names = ["エキスパートルーレット",
              "Lv80ルーレット",
              "Lv50・60・70ルーレット",
@@ -94,6 +92,7 @@ let names = ["エキスパートルーレット",
              "リスキーモブ",
              "ジャンボくじテンダー当選発表"]
 
+//コンテンツリセット時刻の配列を作成
 func makeResetTimes() -> [String] {
     var resetTimes = [String]()
     
@@ -109,7 +108,7 @@ func makeResetTimes() -> [String] {
     resetTimes.append("21:00")
     return resetTimes
 }
-
+//コンテンツリセット曜日の配列を作成
 func makeResetDays() -> [WeekDay?]{
     var resetDays = [WeekDay?]()
     for _ in 0 ... 18 {
@@ -122,14 +121,18 @@ func makeResetDays() -> [WeekDay?]{
     return resetDays
 }
 
+//todoとなるコンテンツの配列を作成
 func makeContents() -> [Content]{
-    var contents = [Content]()
-    let deadlines = makeDeadlines()
-    let resetTimes = makeResetTimes()
-    let resetDays = makeResetDays()
+    var contents = [Content]()         //返り値となるContent構造体の配列を初期化
+    let deadlines = makeDeadlines()    //期日の配列
+    let resetTimes = makeResetTimes()  //リセット時間の配列
+    let resetDays = makeResetDays()    //リセット曜日の配列
     
     for i in 0 ... 37 {
-        var c = Content(name: names[i], deadline: deadlines[i], resetTime: resetTimes[i], resetDay: resetDays[i], description: nil)
+        //Content構造体をインスタンス化
+        var c = Content(name: names[i], deadline: deadlines[i], resetTime: resetTimes[i], resetDay: resetDays[i])
+        
+        //Content.descriptionに値を設定する
         switch c.name {
         case "蛮族デイリークエスト":
             c.description = "最大12クエスト"
@@ -158,7 +161,7 @@ func makeContents() -> [Content]{
         case "リスキーモブ":
             c.description = "新生エリアの指定されたBモブを討伐する"
         default:
-            c.description = nil
+            ()
         }
         contents.append(c)
     }
