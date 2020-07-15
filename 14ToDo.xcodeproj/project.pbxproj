@@ -26,6 +26,7 @@
 		F06862C924BF485E009F44B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F06862CB24BF485E009F44B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F06862D124BF48F1009F44B6 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		F06862D324BF5085009F44B6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +63,7 @@
 				F06862BD24BF485C009F44B6 /* AppDelegate.swift */,
 				F06862BF24BF485C009F44B6 /* SceneDelegate.swift */,
 				F06862C124BF485C009F44B6 /* ViewController.swift */,
+				F06862D324BF5085009F44B6 /* README.md */,
 				F06862C324BF485C009F44B6 /* Main.storyboard */,
 				F06862C624BF485E009F44B6 /* Assets.xcassets */,
 				F06862C824BF485E009F44B6 /* LaunchScreen.storyboard */,
